@@ -1,0 +1,19 @@
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 5px;
+    padding: 2%;
+    width: 85%;
+    background-color: aliceblue;
+}
+#left {
+    float: left;
+    width: 400px;
+    height: 2%;
+    text-align: center;
+    padding: 10px;
+    border:2px solid #222222;
+    margin-right: 50px;
+    border-radius: 5px;
+    background-color: rgb(238, 221, 255);
+    border-color: rgb(171, 186, 200);
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>INST377 - Lab4</title>
+        <link rel="stylesheet" href="Minarich_INST377_Lab4_CSS.css">
+    </head>
+    <body>
+        <h1 id="editText">INST337 - Lab 4</h1>
+        <form id="left" name="nameForm" onsubmit="return alertFunction()">
+            Name: 
+            <input type="text" name="name" required>
+            <input type="submit" value="Alert Me!">
+        </form>
+
+        <form id="left" name="changeColorForm" onsubmit="return changeColor()">
+            <input type="submit" value="Change Color">
+        </form><br><br><br><br>
+
+        <form id="left" name="validateForm" onsubmit="return validateText()">
+            Text Tester:
+            <input type="text" name="inputText" required>
+            <input type="submit" value="Validate Text">
+        </form>
+
+        <form id="left">
+        <button type="button" onclick="return addText()">Add Text</button>
+        </form>
+
+        <script>
+            function alertFunction() {
+                let x = document.forms["nameForm"]["name"].value;
+                alert("Hi " + x + "!");
+                return 0;
+            }
+
+            function changeColor() {
+                if (document.body.style.backgroundColor === 'aliceblue' || document.body.style.backgroundColor == '') {
+                    document.body.style.backgroundColor = '#ffffc8';
+                } else {
+                    document.body.style.backgroundColor = 'aliceblue';
+                }
+                return false;
+            }
+
+            function validateText() {
+                let x = document.forms["validateForm"]["inputText"].value;
+                let validation = ['/', '[', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+', '\\', '-', '=', '\[', '\]', '{', '}', ';', '\'', ':', '\"', '|', '\,', '.', '<', '>', '/', '?'];
+                for (let i = 0; i < validation.length; i++) {
+                    if(x.includes(validation[i])) {
+                        alert("A special character is detected.");
+                    }
+                }
+                return 0;
+            }
+
+            function addText() {
+                document.getElementById('editText').textContent += " Add Text";
+            }
+
+        </script>
+    </body>
+</html>
